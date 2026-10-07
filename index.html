@@ -4,6 +4,8 @@
 <meta name="theme-color" content="#2a1a10">
 <title>Sui · Aldea</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icono.png">
+
 <style>
 :root{--w:#2a1a10;--w2:#3b2616;--p:#f0e0b8;--ink:#3a2412;--gold:#d4a017;--red:#8b1e1e;--grn:#3f6b2f;--blu:#2b4a7a;padding:env(safe-area-inset-top,0) env(safe-area-inset-right,0) env(safe-area-inset-bottom,0) env(safe-area-inset-left,0)}
 *{box-sizing:border-box}
@@ -66,38 +68,6 @@ body.full #cv{width:min(100vw,calc(100vh*240/176));height:auto;aspect-ratio:240/
 body.full #v>.row,body.full #v>.note{display:none}
 body.full .sec:not(#v){position:fixed;inset:0;z-index:40;background:var(--w);overflow:auto;padding:12px}
 body.full .sec:not(#v)>.card{max-width:560px;margin:0 auto 10px}
-/* Dock de música estilo "I Miss My Cafe" (solo PC): reproductor de Spotify abajo a la izquierda */
-#spw{position:fixed;left:12px;bottom:12px;width:300px;z-index:70;background:#18181b;color:#fff;border:3px solid var(--gold);border-radius:12px;box-shadow:0 5px 0 #0008;overflow:hidden}
-body.mob #spw{display:none!important}#spw [hidden]{display:none!important}
-.sph{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;font-family:Cinzel,serif;font-size:14px;cursor:pointer;user-select:none;background:#2a2a2e}.sph:hover{background:#38383d}
-#spx{font-size:16px}
-#spw.min{width:auto}#spw.min .sph{gap:12px;padding:8px 14px}#spw.min .sb{position:absolute;left:-9999px;top:0;width:300px}
-.sb{position:relative;font-size:13px}
-.spu{display:flex;gap:10px;padding:10px;background:linear-gradient(#4a4a50,#2e2e33)}
-#spc{width:92px;height:92px;flex:none;background:#6b5a48 center/cover;display:grid;place-items:center}
-#spp{width:50px;height:50px;border-radius:50%;border:3px solid #fff;background:#0008;color:#fff;font-size:20px;cursor:pointer}
-.spm{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
-.spm b{font-size:16px;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.spm small{color:#bbb;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.spm div{display:flex;align-items:center;gap:6px}
-.spm input{flex:1;min-width:0;margin:0;padding:0;border:0;background:none;accent-color:#fff}
-.spm button{background:none;border:0;color:#fff;font-size:17px;cursor:pointer;padding:2px}
-#spt{display:flex;background:#38383d;box-shadow:0 3px 6px #0006}
-#spt button{flex:1;background:none;border:0;border-bottom:3px solid transparent;color:#aaa;padding:6px 2px;font-size:11px;line-height:1.3;cursor:pointer}
-#spt button.on{color:#fff;border-color:#1db954}
-#spl{height:186px;overflow-y:auto;padding:8px;background:linear-gradient(#2c2c30,#141416)}
-#spi{display:block;width:100%;box-sizing:border-box;margin:0 0 6px;padding:9px;border:0;border-radius:6px;background:#0009;color:#fff;font-size:13px}
-.spr{display:flex;align-items:center;gap:8px;width:100%;padding:5px;border:0;border-radius:6px;background:none;color:#fff;text-align:left;cursor:pointer}
-button.spr:hover{background:#fff2}
-.spr i{width:38px;height:38px;flex:none;border-radius:4px;background:#555 center/cover;display:grid;place-items:center;font-style:normal}
-.spr span{flex:1;min-width:0}.spr b,.spr small{display:block;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.spr small{color:#aaa;font-size:11px}
-.spr em{flex:none;font-style:normal;color:#aaa;font-size:12px}.spk{color:#aaa;padding:8px}
-#spo{position:absolute;left:0;right:0;bottom:0;min-height:186px;box-sizing:border-box;padding:12px;background:#000e;display:flex;flex-direction:column;justify-content:center;text-align:center;z-index:2}
-#spo>div{display:flex;flex-direction:column;gap:8px}#spo b{font-size:17px}#spo small{color:#bbb;font-size:11px;line-height:1.35}
-#spg,#spj{padding:12px;border:0;border-radius:999px;background:#1db954;color:#fff;font-weight:700;font-size:14px;letter-spacing:.5px;cursor:pointer}#spg:hover,#spj:hover{filter:brightness(1.1)}
-#spe{cursor:pointer;text-decoration:underline}
-#spr{display:block;background:#222;padding:5px;border-radius:4px;font-size:11px;word-break:break-all;user-select:all}
-#spk{margin:0;padding:9px;border:0;border-radius:6px;background:#fff2;color:#fff;font-size:12px}
 /* QR */
 #qr{position:fixed;inset:0;display:none;place-items:center;background:#000c;z-index:90;padding:10px}
 #qr.on{display:grid}
@@ -153,17 +123,6 @@ button.spr:hover{background:#fff2}
  <button class="btn b pc" id="qrb" style="width:100%;margin-top:8px">📱 Sincronizar con el teléfono (QR)</button>
 </div></section>
 </div>
-<div id="spw"><div class="sph" id="sph" title="Minimizar"><b>🎵 Música</b><span id="spx">▾</span></div>
- <div class="sb">
-  <div class="spu"><div id="spc"><button id="spp" title="Reproducir / pausar">▶</button></div>
-   <div class="spm"><b id="spn">Música de la aldea</b><small id="spa">Inicia sesión para empezar</small>
-    <div><span>🔊</span><input id="spv" type="range" min="0" max="100"></div>
-    <div><button id="spb" title="Anterior">⏮</button><input id="spq" type="range" min="0" max="1000" value="0"><button id="spf" title="Siguiente">⏭</button></div></div></div>
-  <nav id="spt"><button data-t="c" class="on">☕<br>playlist café</button><button data-t="s">🔍<br>buscar</button><button data-t="m">📚<br>tus playlists</button></nav>
-  <div id="spl"></div>
-  <div id="spo"><div id="spy"><b>¿Quieres la playlist completa?</b><button id="spg">INICIAR SESIÓN EN SPOTIFY</button><small>Requiere Spotify Premium</small><small id="spe">Cambiar Client ID</small></div>
-   <div id="spz"><small>Una sola vez: crea una app gratis en developer.spotify.com/dashboard, marca <i>Web API</i> y <i>Web Playback SDK</i> y usa este Redirect URI:</small><code id="spr"></code><input id="spk" placeholder="Pega aquí tu Client ID"><button id="spj">GUARDAR</button></div></div>
- </div></div>
 <div id="qr"><div class="qc"><h2>📱 Sincronizar con tu teléfono</h2><div class="note" style="margin:0">Escanea el código con la cámara de tu teléfono. Se abrirá tu app de misiones y enviará tus habilidades a este juego.</div><div id="qrc"></div><div class="note" id="qrt" style="margin:0 0 8px"></div><button class="btn" id="qrx" style="width:100%">Cerrar</button></div></div>
 <script>
 const $=i=>document.getElementById(i);
@@ -451,59 +410,7 @@ addEventListener('keyup',e=>{const m=KM[e.key.toLowerCase()];if(m)keys[m]=false}
 addEventListener('blur',()=>{for(const k in keys)keys[k]=false});
 readApp();$('nm').value=G.name;renderP();renderG();requestAnimationFrame(loop);
 
-// Música estilo "I Miss My Cafe" (solo PC): reproductor de Spotify dentro del panel (login con tu cuenta + Web Playback SDK)
-const SPK='sui_spotify',spRU=location.origin+location.pathname,spCAFE='spotify:playlist:37i9dQZF1DWWQRwui0ExPn';
-let spS={min:false,vol:50},spP=null,spD='',spT=null,spG=0,spTb='c';
-try{Object.assign(spS,JSON.parse(localStorage.getItem(SPK)))}catch(e){}
-const spSave=()=>{try{localStorage.setItem(SPK,JSON.stringify(spS))}catch(e){}};
-const spEsc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';');
-const spFmt=ms=>{const s=Math.round(ms/1000);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')};
-function spMin(m){spS.min=m;$('spw').classList.toggle('min',m);$('spx').textContent=m?'▴':'▾';$('sph').title=m?'Abrir':'Minimizar';spSave()}
-$('sph').onclick=()=>spMin(!spS.min);
-['keydown','keyup'].forEach(k=>$('spw').addEventListener(k,e=>e.stopPropagation()));
-$('spw').addEventListener('click',e=>{const b=e.target.closest('button');if(b)b.blur()});
-// --- login (PKCE, sin servidor)
-const spB64=b=>btoa(String.fromCharCode(...new Uint8Array(b))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
-async function spLogin(){const v=spB64(crypto.getRandomValues(new Uint8Array(48))),c=spB64(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(v)));localStorage.setItem('sp_v',v);
- location.href='https://accounts.spotify.com/authorize?'+new URLSearchParams({client_id:spS.cid,response_type:'code',redirect_uri:spRU,code_challenge_method:'S256',code_challenge:c,scope:'streaming user-read-email user-read-private user-modify-playback-state user-read-playback-state playlist-read-private playlist-read-collaborative'})}
-async function spTok(b){let j={};try{j=await(await fetch('https://accounts.spotify.com/api/token',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({client_id:spS.cid,...b})})).json()}catch(e){return null}
- if(j.access_token){spS.tok=j.access_token;spS.exp=Date.now()+j.expires_in*1000-60000;if(j.refresh_token)spS.ref=j.refresh_token;spSave();return spS.tok}
- spS.tok=spS.ref='';spSave();spView();return null}
-const spGet=async()=>spS.tok&&Date.now()<spS.exp?spS.tok:spS.ref?spTok({grant_type:'refresh_token',refresh_token:spS.ref}):null;
-async function spApi(p,o){const t=await spGet();if(!t)return null;try{const r=await fetch('https://api.spotify.com/v1'+p,{...o,headers:{Authorization:'Bearer '+t,'Content-Type':'application/json'}});return r.status===204?{}:r.ok?await r.json():null}catch(e){return null}}
-function spView(){const on=!!(spS.ref||spS.tok);$('spo').hidden=on;$('spy').hidden=!spS.cid;$('spz').hidden=!!spS.cid;
- $('spr').textContent=location.protocol==='file:'||location.hostname==='localhost'?'⚠ Abre el juego desde https o desde http://127.0.0.1:PUERTO (Spotify no acepta archivos locales ni localhost)':spRU}
-$('spg').onclick=spLogin;
-$('spe').onclick=()=>{spS.cid='';spSave();spView()};
-$('spj').onclick=()=>{const v=$('spk').value.trim();if(/^[a-f0-9]{32}$/i.test(v)){spS.cid=v;spSave();spView()}else $('spk').style.outline='2px solid #e33'};
-// --- reproductor
-const spRows=(el,a)=>{el.innerHTML=(a||[]).filter(Boolean).map(p=>'<button class="spr" data-u="'+spEsc(p.uri)+'"><i style="background-image:url('+spEsc(((p.images||[])[0]||{}).url||'')+')"></i><span><b>'+spEsc(p.name)+'</b><small>'+spEsc((p.owner||{}).display_name||'')+'</small></span></button>').join('')||'<div class="spk">Sin resultados</div>'};
-function spBody(){const w=spT?[spT.track_window.current_track,...spT.track_window.next_tracks]:[];
- $('spl').innerHTML=w.length?w.map((t,i)=>'<div class="spr"><em>'+(i+1)+'</em><span><b>'+spEsc(t.name)+'</b><small>'+spEsc(t.artists.map(a=>a.name).join(', '))+'</small></span><em>'+spFmt(t.duration_ms)+'</em></div>').join(''):'<button class="spr" data-u="'+spCAFE+'"><i>☕</i><span><b>Playlist café</b><small>Toca para empezar a escuchar</small></span></button>'}
-async function spTab(t){spTb=t;document.querySelectorAll('#spt button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));const L=$('spl');
- if(t==='c')return spBody();
- if(t==='s'){L.innerHTML='<input id="spi" placeholder="Busca una playlist para escuchar…"><div id="spd"></div>';let h;
-  $('spi').oninput=()=>{clearTimeout(h);h=setTimeout(async()=>{const v=$('spi').value.trim();if(!v){$('spd').innerHTML='';return}const j=await spApi('/search?type=playlist&limit=10&q='+encodeURIComponent(v));if(spTb==='s'&&$('spd'))spRows($('spd'),j&&j.playlists?j.playlists.items:[])},400)};return $('spi').focus()}
- L.innerHTML='<div class="spk">Cargando…</div>';const j=await spApi('/me/playlists?limit=50');if(spTb==='m')spRows(L,j?j.items:[])}
-document.querySelectorAll('#spt button').forEach(b=>b.onclick=()=>spTab(b.dataset.t));
-$('spl').onclick=e=>{const b=e.target.closest('[data-u]');if(b)spPlay(b.dataset.u)};
-async function spPlay(u){if(!spP||!spD)return;try{await spP.activateElement()}catch(e){}await spApi('/me/player/play?device_id='+spD,{method:'PUT',body:JSON.stringify({context_uri:u})})}
-function spState(s){if(!s||!s.track_window.current_track)return;spT=s;const t=s.track_window.current_track,im=t.album.images[0];
- $('spn').textContent=t.name;$('spa').textContent=t.artists.map(a=>a.name).join(', ');$('spc').style.backgroundImage=im?'url('+im.url+')':'';$('spp').textContent=s.paused?'▶':'⏸';if(spTb==='c')spBody()}
-$('spp').onclick=()=>{if(!spP)return;if(spT){spP.activateElement();spP.togglePlay()}else spPlay(spCAFE)};
-$('spb').onclick=()=>spP&&spP.previousTrack();$('spf').onclick=()=>spP&&spP.nextTrack();
-$('spv').value=spS.vol;$('spv').oninput=()=>{spS.vol=+$('spv').value;spSave();if(spP)spP.setVolume(spS.vol/100)};
-$('spq').onpointerdown=()=>{spG=1};$('spq').onpointerup=()=>{spG=0};
-$('spq').onchange=()=>{spG=0;if(spT)spP.seek(spT.duration*$('spq').value/1000)};
-setInterval(()=>{if(!spT||spG)return;const p=spT.paused?spT.position:spT.position+Date.now()-spT.timestamp;$('spq').value=spT.duration?Math.min(1000,p/spT.duration*1000):0},500);
-function spBoot(){spView();if(!(spS.ref||spS.tok))return;
- window.onSpotifyWebPlaybackSDKReady=()=>{spP=new Spotify.Player({name:'La Aldea',volume:spS.vol/100,getOAuthToken:async cb=>cb(await spGet())});
-  spP.addListener('ready',e=>{spD=e.device_id});spP.addListener('player_state_changed',spState);
-  ['initialization_error','authentication_error','account_error','playback_error'].forEach(k=>spP.addListener(k,e=>{$('spa').textContent=k==='account_error'?'Se necesita Spotify Premium':e.message}));
-  spP.connect()};
- const s=document.createElement('script');s.src='https://sdk.scdn.co/spotify-player.js';document.head.appendChild(s);spTab(spTb)}
-if(PC){spMin(!!spS.min);const Q=new URLSearchParams(location.search),V=localStorage.getItem('sp_v');
- if(Q.get('code')&&spS.cid&&V){history.replaceState(null,'',spRU);spTok({grant_type:'authorization_code',code:Q.get('code'),redirect_uri:spRU,code_verifier:V}).then(spBoot)}else spBoot()}
+try{localStorage.removeItem('sui_spotify');localStorage.removeItem('sp_v')}catch(e){}
 
 // Sincronizar con el teléfono: el QR abre index.html?sync=CODIGO en el teléfono; la app de misiones
 // publica ahí {lv,sp,skills} (canal de ntfy.sh) y este juego lo recibe en tiempo real.
@@ -518,9 +425,11 @@ function synOn(){if(!synTok||synES||!window.EventSource)return;
   o=Object.assign(o,d,{skills:Object.assign({},o.skills,d.skills)});
   try{localStorage.setItem('cronicas',JSON.stringify(o))}catch(x){}
   synMsg='✔ Teléfono conectado · '+new Date().toLocaleTimeString().slice(0,5);qrTxt();resync()}catch(x){}}}
+// Dirección de tu app de misiones (puede estar en otro repositorio). Si está junto al juego, basta 'index.html'
+const APP_URL='https://zomboyhtml.github.io/Sui/index.html';
 function openQR(){
  if(!synTok){synTok=Array.from(crypto.getRandomValues(new Uint8Array(14)),b=>(b%36).toString(36)).join('');try{localStorage.setItem('sui_tok',synTok)}catch(e){}}
- const u=new URL('index.html',location.href);u.searchParams.set('sync',synTok);
+ const u=new URL(APP_URL,location.href);u.searchParams.set('sync',synTok);
  $('qr').classList.add('on');$('qrc').innerHTML='';qrTxt();synOn();
  const mk=()=>{new QRCode($('qrc'),{text:u.href,width:200,height:200,correctLevel:QRCode.CorrectLevel.M})};
  if(window.QRCode)mk();else{const q=document.createElement('script');q.src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';q.onload=mk;q.onerror=()=>{$('qrc').textContent=u.href};document.head.appendChild(q)}}
