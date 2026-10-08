@@ -88,6 +88,26 @@ body.mob #bw{max-width:640px}
 .pv{margin-bottom:6px}.pv small{display:block;color:#6b4a2a;font-size:11px}.pv.tot{border-top:2px solid var(--gold);padding-top:4px}
 .hn{display:block;color:#fff;text-shadow:0 1px 2px #000;font-weight:700;font-size:12px}
 .mi{display:block;width:40px}.mi img{width:40px;image-rendering:pixelated}
+#joy{position:relative;width:128px;height:128px;border-radius:50%;background:#ffffff1c;border:3px solid var(--gold);touch-action:none;flex:none;user-select:none;-webkit-user-select:none}
+#joy:before{content:'';position:absolute;inset:34px;border-radius:50%;border:2px dashed #fff5}
+#knob{position:absolute;left:50%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:radial-gradient(#ffe9a8,#d4a017);border:3px solid var(--w);box-shadow:0 3px 0 #0006;pointer-events:none}
+/* Teléfono en horizontal: el juego ocupa toda la pantalla y los controles flotan en las esquinas */
+@media (orientation:landscape) and (max-height:600px){
+body.mob .app{max-width:none;padding:0}
+body.mob #v>.card{padding:0;margin:0;border:0;border-radius:0;background:none;box-shadow:none}
+body.mob #gm{position:fixed;inset:0;z-index:1;display:flex;align-items:center;justify-content:center}
+body.mob #cv{width:min(100vw,calc(100dvh*240/176));height:auto;aspect-ratio:240/176;border:0;border-radius:0}
+body.mob #v .card>.note{display:none}
+body.mob #v .card>.row.mob{position:fixed;left:0;right:0;bottom:0;z-index:10;margin:0!important;align-items:flex-end!important;pointer-events:none;padding:0 max(14px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left))}
+body.mob #v .card>.row.mob>*{pointer-events:auto}
+body.mob #act{flex:none!important;width:min(200px,36vw);height:64px!important;font-size:13px!important;opacity:.92}
+body.mob #act[disabled]{opacity:.25}
+body.mob #joy{width:112px;height:112px}
+body.mob .arena{min-height:110px}
+body.mob .cd{height:58px}body.mob .cd b{font-size:20px}
+body.mob .en img{width:44px}body.mob .sp{max-width:72px}
+body.mob #bo .note{display:none}
+}
 </style></head><body><div class="app">
 
 
@@ -108,10 +128,7 @@ body.mob #bw{max-width:640px}
  </div><div id="side" class="pc"><div id="s1"></div><div id="s2"></div></div></div></div>
 </div>
 <div class="row mob" style="justify-content:space-between;align-items:center;margin-top:8px">
- <div id="dp" style="display:grid;grid-template-columns:repeat(3,52px);grid-template-rows:repeat(3,52px);gap:4px">
-  <span></span><button class="btn b" data-d="u">▲</button><span></span>
-  <button class="btn b" data-d="l">◀</button><span></span><button class="btn b" data-d="r">▶</button>
-  <span></span><button class="btn b" data-d="d">▼</button><span></span></div>
+ <div id="joy"><div id="knob"></div></div>
  <button class="btn g" id="act" style="flex:1;height:84px;font-size:15px" disabled>Camina hasta un edificio</button></div>
 <div class="row pc" style="margin-top:8px"><button class="btn b" id="fs">⛶ Pantalla completa (F)</button><button class="btn g" id="act2" style="flex:1" disabled>Camina hasta un edificio</button></div>
 <div class="note">Entra a la mazmorra desde la aldea: cada piso se genera distinto y los enemigos son aleatorios.</div>
@@ -480,4 +497,14 @@ $('qrb').onclick=openQR;$('qrx').onclick=()=>$('qr').classList.remove('on');
 $('qr').onclick=e=>{if(e.target===$('qr'))$('qr').classList.remove('on')};
 addEventListener('keydown',e=>{if(e.key==='Escape'){if($('qr').classList.contains('on'))$('qr').classList.remove('on');else if(!$('v').classList.contains('on'))tab('v')}});
 if(synTok)synOn();
+
+// Joystick virtual (teléfono): traduce el desplazamiento a las mismas teclas de movimiento
+(()=>{const j=$('joy'),k=$('knob');let id=null;
+const set=(x,y)=>{keys.l=x<-.35;keys.r=x>.35;keys.u=y<-.35;keys.d=y>.35};
+const mv=e=>{const r=j.getBoundingClientRect(),R=r.width/2,L=R-6;let dx=e.clientX-r.left-R,dy=e.clientY-r.top-R;const m=Math.hypot(dx,dy);if(m>L){dx*=L/m;dy*=L/m}
+ k.style.transform='translate('+dx+'px,'+dy+'px)';set(dx/L,dy/L)};
+const end=e=>{if(e.pointerId!==id)return;id=null;k.style.transform='';set(0,0)};
+j.onpointerdown=e=>{e.preventDefault();id=e.pointerId;try{j.setPointerCapture(id)}catch(x){}mv(e)};
+j.onpointermove=e=>{if(e.pointerId===id)mv(e)};
+j.onpointerup=end;j.onpointercancel=end;j.oncontextmenu=e=>e.preventDefault()})();
 </script></body></html>
