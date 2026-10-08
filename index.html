@@ -4,10 +4,6 @@
 <meta name="theme-color" content="#2a1a10">
 <title>Sui · Aldea</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" sizes="32x32" href="img/icono.png">
-<link rel="icon" type="image/png" sizes="192x192" href="img/SuiGame.png">
-<link rel="apple-touch-icon" sizes="180x180" href="img/SuiGame.png">
-
 <style>
 :root{--w:#2a1a10;--w2:#3b2616;--p:#f0e0b8;--ink:#3a2412;--gold:#d4a017;--red:#8b1e1e;--grn:#3f6b2f;--blu:#2b4a7a;padding:env(safe-area-inset-top,0) env(safe-area-inset-right,0) env(safe-area-inset-bottom,0) env(safe-area-inset-left,0)}
 *{box-sizing:border-box}
@@ -55,8 +51,8 @@ body.mob .pc{display:none!important}body.pc .mob{display:none!important}
 body.pc #gd{display:block}
 #st0{position:absolute;inset:0;background:#000d;color:#fff;display:none;place-items:center;text-align:center;z-index:20;font-family:Cinzel,serif;font-size:clamp(16px,3vw,26px);line-height:1.6;cursor:pointer}
 #bo{position:fixed;inset:0;display:none;background:#000d;overflow:auto;padding:10px;z-index:50;line-height:normal}
-#bo.on{display:block}
-#bo .bc{max-width:640px;margin:0 auto;background:var(--p);border:3px solid var(--gold);border-radius:10px;padding:12px}
+#bo.on{display:flex}
+#bo .bc{width:100%;max-width:640px;margin:auto;background:var(--p);border:3px solid var(--gold);border-radius:10px;padding:12px}
 .ens{display:flex;gap:4px;justify-content:space-around;align-items:flex-end;flex:1}
 .en{text-align:center;cursor:pointer;flex:1;padding:2px;border-radius:6px}.en.t{outline:3px solid var(--gold);background:#fff3}
 .en img{width:clamp(48px,14vw,84px);image-rendering:pixelated;animation:bob .9s steps(2) infinite}@keyframes bob{50%{transform:translateY(-3px)}}
@@ -106,11 +102,10 @@ body.full .sec:not(#v)>.card{max-width:560px;margin:0 auto 10px}
 <div class="row pc" style="margin-top:8px"><button class="btn b" id="fs">⛶ Pantalla completa (F)</button><button class="btn g" id="act2" style="flex:1" disabled>Camina hasta un edificio</button></div>
 <div class="note">Entra a la mazmorra desde la aldea: cada piso se genera distinto y los enemigos son aleatorios.</div>
 </div></section>
-<section id="g" class="sec"><button class="btn b bk" data-t="v">🏘️ Volver a la aldea</button><div class="card"><h2>🏰 Gremio · Armería <span style="float:right">🪙 <b id="gold">0</b></span></h2>
+<section id="g" class="sec"><button class="btn b bk" data-t="v">🏘️ Volver a la aldea</button><div class="card"><h2>⚒️ Herrería · Armería <span style="float:right">🪙 <b id="gold">0</b></span></h2>
 <div id="wimg" style="width:150px;height:150px;margin:0 auto"></div>
 <div style="text-align:center"><b id="wn"></b><div class="note" id="wd"></div></div>
 <button class="btn g" id="wup" style="width:100%;margin-top:8px"></button>
-<button class="btn b" id="wmis" style="width:100%;margin-top:6px">📜 Ir a mis misiones</button>
 <div class="note">Gana 🪙 venciendo enemigos en la mazmorra. Cada nivel del arma da +8% de daño (máx. nivel 10) y a los niveles 3, 6 y 9 cambia de material.</div></div></section>
 <section id="p" class="sec">
 <button class="btn b bk" data-t="v">🏘️ Volver a la aldea</button>
@@ -120,9 +115,9 @@ body.full .sec:not(#v)>.card{max-width:560px;margin:0 auto 10px}
  <div class="row" id="cl"></div><div class="note" id="cln"></div>
  <b>Género</b><div class="row" id="sx"></div><b>Piel</b><div id="skin"></div><b>Cabello</b><div id="hair"></div><b>Túnica / armadura</b><div id="arm"></div><b>Capa / sombrero</b><div id="cape"></div><b>Peinado</b><div class="row" id="hst"></div>
 </div>
-<div class="card" id="pc2"><h2>Estadísticas <span style="float:right">Puntos extra: <b id="av">0</b></span></h2>
+<div class="card" id="pc2"><h2>🏰 Gremio · Habilidades <span style="float:right">Puntos extra: <b id="av">0</b></span></h2>
  <div id="sts"></div><div class="note" id="syn"></div>
- <button class="btn b pc" id="qrb" style="width:100%;margin-top:8px">📱 Sincronizar con el teléfono (QR)</button>
+ <button class="btn b" id="qrb" style="width:100%;margin-top:8px">📱 Sincronizar con el teléfono (QR)</button>
 </div></section>
 </div>
 <div id="qr"><div class="qc"><h2>📱 Sincronizar con tu teléfono</h2><div class="note" style="margin:0">Escanea el código con la cámara de tu teléfono. Se abrirá tu app de misiones y enviará tus habilidades a este juego.</div><div id="qrc"></div><div class="note" id="qrt" style="margin:0 0 8px"></div><button class="btn" id="qrx" style="width:100%">Cerrar</button></div></div>
@@ -244,12 +239,12 @@ function bkey(k,e){if(!B)return;const n=+k;
  else if(k==='q')np();else if(k==='r')seal();
  else if((k==='arrowleft'||k==='arrowright')&&!B.over){const a=B.en.map((x,i)=>i).filter(i=>B.en[i].hp>0),j=a.indexOf(B.tg);B.tg=a[(j+(k==='arrowleft'?-1:1)+a.length)%a.length];ui()}}
 
-// Gremio: armería
+// Herrería: armería
 function renderG(){const l=G.wl|0,t=Math.min(3,l/3|0);$('gold').textContent=G.gold|0;$('wimg').innerHTML=hero();
  $('wn').textContent=WN[G.cls]+' de '+WT[t]+' +'+l;$('wd').textContent='Daño +'+l*8+'%'+(l<10?' → siguiente +'+(l+1)*8+'%':' (máximo)');
  $('wup').textContent=l>=10?'Arma al máximo':'⚒️ Mejorar · '+wcost()+' 🪙';$('wup').disabled=l>=10||(G.gold|0)<wcost()}
 function upW(){const c=wcost();if((G.wl|0)>=10||(G.gold|0)<c)return;G.gold-=c;G.wl=(G.wl|0)+1;sv();renderG();renderP()}
-$('wup').onclick=upW;$('wmis').onclick=()=>{if(PC)openQR();else location.href='index.html'};
+$('wup').onclick=upW;
 
 // Personaje y estadísticas
 function renderP(){$('prev').innerHTML=hero();
@@ -280,8 +275,8 @@ document.body.classList.add(PC?'pc':'mob');
 const pv=v=>{$('p').classList.toggle('vc',v==='c');$('p').classList.toggle('vs',v==='s')};
 const HS=[{x:14,y:2,l:'Mazmorra',t:'Entrar a la mazmorra',c:['#555a66','#b9b3a5'],a:()=>enterD()},
 {x:2,y:2,l:'Casa',t:'Entrar a tu casa',c:['#4a6fa5','#efe2c0'],a:()=>{pv('c');tab('p')}},
-{x:2,y:10,l:'Herrería',t:'Mejorar estadísticas',c:['#6a6a72','#d9cfc0'],a:()=>{pv('s');tab('p')}},
-{x:14,y:10,l:'Gremio',t:'Entrar al Gremio',c:['#3f8a45','#efe2c0'],a:()=>tab('g')}];
+{x:2,y:10,l:'Herrería',t:'Mejorar arma',c:['#6a6a72','#d9cfc0'],a:()=>tab('g')},
+{x:14,y:10,l:'Gremio',t:'Mejorar habilidades',c:['#3f8a45','#efe2c0'],a:()=>{pv('s');tab('p')}}];
 function vt(x,y){if(x<1||y<1||x>18||y>14)return 3;
  if(HS.some(h=>x>=h.x&&x<h.x+3&&y>=h.y&&y<h.y+2))return 4;
  if(x>5&&x<8&&y>2&&y<6)return 2;
@@ -438,5 +433,5 @@ function openQR(){
 $('qrb').onclick=openQR;$('qrx').onclick=()=>$('qr').classList.remove('on');
 $('qr').onclick=e=>{if(e.target===$('qr'))$('qr').classList.remove('on')};
 addEventListener('keydown',e=>{if(e.key==='Escape'){if($('qr').classList.contains('on'))$('qr').classList.remove('on');else if(!$('v').classList.contains('on'))tab('v')}});
-if(PC&&synTok)synOn();
+if(synTok)synOn();
 </script></body></html>
