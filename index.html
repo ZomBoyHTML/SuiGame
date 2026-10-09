@@ -108,6 +108,64 @@ body.mob .cd{height:58px}body.mob .cd b{font-size:20px}
 body.mob .en img{width:44px}body.mob .sp{max-width:72px}
 body.mob #bo .note{display:none}
 }
+.cd{border:3px solid #2a1a0a;border-radius:12px;overflow:hidden;gap:2px;font-weight:700;letter-spacing:.5px;transition:transform .12s,box-shadow .12s;box-shadow:inset 0 0 0 2px #ffffff55,0 3px 0 #0006}
+.cd:before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,#ffffff40 45%,transparent 60%),repeating-linear-gradient(45deg,#ffffff0d 0 4px,transparent 4px 8px)}
+.cd.G{background:linear-gradient(165deg,#e8604f,#b03a2e 55%,#7a1f17)}
+.cd.A{background:linear-gradient(165deg,#5b9aee,#2b5fa8 55%,#1b3f75)}
+.cd.Q{background:linear-gradient(165deg,#52d08a,#2e8b57 55%,#1b633c)}
+.cd .ct{font-size:clamp(9px,2.6vw,11px);text-transform:uppercase;text-shadow:0 1px 2px #000a;z-index:1}
+.cd .ci{display:grid;place-items:center;width:clamp(34px,10vw,44px);height:clamp(34px,10vw,44px);border-radius:50%;font-size:clamp(20px,6vw,27px);background:radial-gradient(circle at 35% 30%,#ffffffaa,#ffffff30 45%,#0000003a);box-shadow:inset 0 0 0 2px #ffffff77,0 2px 4px #0006;z-index:1}
+.cd .cv{font-size:clamp(10px,3vw,13px);background:#0000007a;border:1px solid #ffffff55;border-radius:9px;padding:0 8px;line-height:16px;z-index:1}
+.cd.c:after{content:'★';position:absolute;top:2px;right:5px;color:#ffd54f;font-size:14px;text-shadow:0 1px 2px #000;z-index:2}
+.cd.s{outline:0;transform:translateY(-10px);border-color:var(--gold);box-shadow:0 0 0 2px var(--gold),0 0 14px 2px #ffd54fcc,0 8px 14px #0007,inset 0 0 0 2px #ffffff88}
+body.pc .cd:hover{transform:translateY(-4px)}body.pc .cd.s:hover{transform:translateY(-10px)}
+.cd .n,.cd .k{z-index:2}
+@media (orientation:landscape) and (max-height:600px){body.mob .cd .ct{display:none}body.mob .cd .cv{font-size:10px;line-height:13px}body.mob .cd .ci{width:28px;height:28px;font-size:17px}}
+.qm{width:26px;height:26px;border-radius:50%;border:2px solid var(--gold);background:#fff8;color:#4a2f1a;font-weight:700;cursor:pointer;margin-right:6px;flex:none;padding:0}
+.qm.on{background:var(--gold)}
+.tip{background:#fff7e0;border:2px dashed var(--gold);border-radius:8px;padding:8px;margin:-2px 0 8px;font-size:12.5px;line-height:1.45;color:#4a2f1a}
+.tip ul{margin:2px 0 4px 16px;padding:0}
+#bo .bc{position:relative}
+#hq{position:absolute;top:-9px;right:-9px;width:28px;height:28px;border-radius:50%;border:2px solid var(--gold);background:#fff3c4;color:#4a2f1a;font-weight:700;font-size:15px;cursor:pointer;z-index:5;padding:0;box-shadow:0 2px 0 #0006}
+#hw{position:fixed;inset:0;z-index:60;background:#000b;display:none;align-items:center;justify-content:center;padding:12px}
+#hw.on{display:flex}
+.hc{background:var(--p);border:3px solid var(--gold);border-radius:10px;padding:14px;width:100%;max-width:520px;max-height:88vh;overflow:auto;color:#4a2f1a;font-size:13.5px;line-height:1.45}
+.hc h2{margin:0 0 6px}.hc h3{margin:10px 0 2px;font-size:14px}.hc p{margin:0}.hc ul{margin:2px 0 0 18px;padding:0}
+.cd .ci{border-radius:10px;background:#00000040;padding:3px;width:clamp(36px,11vw,48px);height:clamp(36px,11vw,48px)}
+.cd .ci img{width:100%;height:100%;image-rendering:pixelated;display:block}
+/* Cartas a todo el cuadro, Gran Técnica y combate para teléfono */
+.cd{padding:0;justify-content:flex-end}
+.cd:before{z-index:2}
+.cd .ca{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;image-rendering:pixelated;padding:17% 10% 27%;box-sizing:border-box;filter:drop-shadow(0 3px 0 #0008);z-index:1}
+.cd .ct{position:absolute;top:0;left:0;right:0;background:#000a;padding:2px 0;font-size:clamp(9px,2.7vw,11px);letter-spacing:.5px;text-align:center;z-index:3}
+.cd .cv{position:absolute;left:0;right:0;bottom:0;border:0;border-radius:0;background:linear-gradient(#0000,#000c 55%);font-size:clamp(17px,5.6vw,24px);line-height:1;padding:10px 0 4px;text-align:center;text-shadow:0 2px 0 #000;z-index:3}
+.cd .cv small{font-size:.5em;opacity:.85;font-weight:400}
+.cd .n{top:17px;left:4px;z-index:4}.cd.c:after{top:16px;right:5px;z-index:4}.cd .k{bottom:3px;z-index:4}
+.cd .rs{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#000c;font-size:clamp(20px,6.5vw,30px);text-shadow:0 2px 0 #000;animation:pop .35s}
+.cd .rs small{font-size:.42em;color:#ffd54f}
+.cd.cr .rs{background:radial-gradient(circle,#ffe082,#c88a00 80%);color:#3a2412;text-shadow:0 1px 0 #fff8}.cd.cr .rs small{color:#7a1f1f}
+@keyframes pop{from{transform:scale(.5);opacity:0}}
+#npb{position:relative;overflow:hidden;min-height:56px;flex:1.5!important;background:linear-gradient(#2b4a7a,#14275a);border:3px solid #0d1a3d;color:#fff;font-weight:700;line-height:1.15}
+#npb .npf{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,#ff9800,#ffe082);opacity:.6;transition:width .4s}
+#npb .npl{position:relative;display:block}#npb .npl small{display:block;font-size:11px;font-weight:400;opacity:.95}
+#npb.rdy{background:linear-gradient(#ffd54f,#d4a017);color:#3a2412;border-color:#7a5a00;animation:glow 1.2s infinite}
+#npb[disabled]:not(.rdy){opacity:.85}
+@keyframes glow{50%{box-shadow:0 0 14px 3px #ffd54f,0 3px 0 var(--w)}}
+#go,#seal{min-height:56px}#go{font-size:16px}
+.tb{position:absolute;top:8px;left:8px;right:50px;display:flex;gap:4px;overflow-x:auto;font-size:11px;white-space:nowrap;z-index:4}
+.tb span{background:#0002;border:1px solid #0003;border-radius:10px;padding:2px 6px}.tb b{margin-left:3px}
+#sum{background:#fff6;border:2px dashed var(--gold);border-radius:10px;padding:6px 8px;text-align:center;font-size:14px;line-height:1.35;min-height:46px}
+#sum .tt{font-size:22px;color:#7a1f1f}#sum .cm{color:#2b5fa8}#sum small{display:block;color:#6b4a2a;font-size:11px}#sum .sl{font-size:11px;color:#6b4a2a;text-transform:uppercase;letter-spacing:.5px}
+body.pc #tb,body.pc #sum{display:none}
+body.mob #hq{top:8px;right:8px;width:34px;height:34px;font-size:18px}
+@media (orientation:portrait){
+body.mob #bo{padding:0}
+body.mob #bw{max-width:none;min-height:100dvh;align-items:stretch}
+body.mob #bw .bc{border-radius:0;border-width:0;padding:46px 8px 10px;display:flex;flex-direction:column;gap:6px;min-height:100dvh;margin:0}
+body.mob .arena{flex:1;min-height:170px}
+body.mob .cd{height:clamp(112px,31vw,140px)}
+}
+@media (orientation:landscape) and (max-height:600px){body.mob .cd .cv small{display:none}body.mob #sum{font-size:12px;padding:3px 6px;min-height:0}body.mob .tb{font-size:10px}body.mob #go,body.mob #seal,body.mob #npb{min-height:40px}}
 </style></head><body><div class="app">
 
 
@@ -117,14 +175,28 @@ body.mob #bo .note{display:none}
  <div id="hud"></div>
  <div id="gd"><b>CONTROLES</b><br>WASD / Flechas · mover<br>E / Enter · acción<br>Clic · caminar / entrar<br>F · pantalla completa<br>Esc · salir</div>
  <div id="st0"><div>⚔️ SUI<br><small>Haz clic o pulsa ENTER<br>para jugar en pantalla completa</small></div></div>
- <div id="bo"><div id="bw"><div class="bc">
+ <div id="bo"><div id="hw"><div class="hc"><h2>❓ Cómo jugar</h2>
+<h3>🎯 Objetivo</h3><p>Derrota a todos los enemigos antes de que tu vida llegue a 0. Tras cada ataque tuyo, los enemigos que sigan vivos te atacan. Si caes, vuelves a la aldea.</p>
+<h3>🃏 Tu turno</h3><p>Cada turno recibes 5 cartas al azar. Toca 3 (toca una elegida otra vez para quitarla) y pulsa <b>Atacar</b>. El golpe cae sobre el enemigo marcado: toca a un enemigo para elegirlo como objetivo. El número de cada carta es su daño, ya con tus bonus de habilidad y de arma.</p>
+<ul><li>🗡️ <b>Golpe</b> usa Fuerza.</li><li>✨ <b>Arte</b> usa Poder Mágico.</li><li>💨 <b>Ágil</b> usa Reflejos.</li><li>★ marca la carta de tu clase: +15% de daño.</li></ul>
+<h3>🔗 Cadena y combo</h3><p>3 cartas iguales = <b>Cadena</b>: daño ×1.6. 3 cartas distintas = <b>Combo</b>: daño ×1.25 y +20% de energía.</p>
+<h3>💥 Crítico</h3><p>Cada carta puede pegar crítico y hacer el doble (×2). La probabilidad sube con Suerte Crítica y siendo Lancero. El daño de las cartas es fijo: el crítico es el único azar.</p>
+<h3>✨ Gran Técnica</h3><p>Cada carta suma energía a la barra azul (más con Carga Especial). Al llegar al 100% puedes usarla: daño fijo a todos los enemigos a la vez.</p>
+<h3>🔱 Sello</h3><p>Recuperas 35% de vida y 50% de energía. Empiezas con 3 al entrar a la mazmorra y cada jefe vencido da +1 (máx. 5).</p>
+<h3>🛡️ Defensa</h3><p>Resistencia sube tu vida y baja el daño de cada golpe enemigo. Reflejos te da probabilidad de esquivar.</p>
+<h3>🪙 Recompensas</h3><p>Ganas oro por cada enemigo (los jefes dan extra), avanzas las misiones del tablón y recuperas un poco de vida al ganar. Mejora tu arma en la Herrería: +8% de daño por nivel.</p>
+<h3 class="pc">⌨️ Teclas</h3><p class="pc">1-5 elegir cartas · Enter atacar · Q Gran Técnica · R Sello · ← → cambiar objetivo.</p>
+<h3 class="pc">📊 Panel de la derecha</h3><p class="pc">Muestra tus estadísticas y el daño previsto: cada paréntesis es una carta (base × bonus de arma y clase), luego × cadena o combo = daño total. Abajo ves tu último golpe y si hubo crítico.</p>
+<h3 class="mob">📊 Resumen de daño</h3><p class="mob">Arriba ves tus estadísticas. Cada carta muestra su daño; al elegir 3, la franja de abajo suma el daño total con la cadena o el combo. Tras atacar, cada carta usada muestra lo que pegó y 💥 si fue crítico (×2), y la franja guarda el último golpe.</p>
+<button class="btn g" id="hx" style="width:100%">Entendido</button></div></div><div id="bw"><div class="bc"><button id="hq" aria-label="Cómo jugar">?</button><div class="tb" id="tb"></div>
   <div class="arena" id="ar"><div class="ens" id="ens"></div><div class="fig" id="fp"><div class="bar hp"><i id="ph"></i></div><small class="hn" id="phn"></small><div class="sp" id="ps"></div><div class="bar np"><i id="pn"></i></div><small id="pname"></small></div></div>
   <div class="log" id="log"></div>
-  <div class="note">Toca un enemigo para elegirlo como objetivo. Tres cartas iguales = cadena (×1.6); tres distintas = combo (×1.25).</div>
+  
+  <div id="sum"></div>
   <div class="hand" id="hand"></div>
   <div class="row"><button class="btn g" id="go" style="flex:1">Atacar</button><button class="btn b" id="npb" style="flex:1">✨ Gran Técnica</button><button class="btn" id="seal" style="flex:1">🔱 Sello <span id="sl"></span></button></div>
   <button class="btn g" id="start" style="width:100%;display:none;margin-top:8px"></button>
-  <div class="note pc">Teclas: 1-5 cartas · Enter atacar · Q Gran Técnica · R Sello · ← → objetivo</div>
+  
  </div><div id="side" class="pc"><div id="s1"></div><div id="s2"></div></div></div></div>
 </div>
 <div class="row mob" style="justify-content:space-between;align-items:center;margin-top:8px">
@@ -156,7 +228,7 @@ body.mob #bo .note{display:none}
 <script>
 const $=i=>document.getElementById(i);
 // Habilidad de la app → estadística del juego
-const ST={fue:['💪','Fuerza','vigor','Vigor'],res:['🛡️','Resistencia','disciplina','Disciplina'],man:['🔮','Maná','intelecto','Intelecto'],agi:['🏃','Agilidad','puntualidad','Puntualidad'],sue:['🍀','Suerte','orden','Orden'],enc:['👑','Encanto','carisma','Carisma']};
+const ST={fue:['💪','Fuerza','vigor','Vigor'],res:['🛡️','Resistencia','disciplina','Disciplina'],man:['🔮','Poder Mágico','intelecto','Intelecto'],agi:['🏃','Reflejos','puntualidad','Puntualidad'],sue:['🍀','Suerte Crítica','orden','Orden'],enc:['👑','Carga Especial','carisma','Carisma']};
 const CL={caballero:['⚔️','Caballero','G','Golpe +15% de daño'],arquero:['🏹','Arquero','Q','Ágil +15% de daño'],hechicero:['🔮','Hechicero','A','Arte +15% de daño'],lancero:['🔱','Lancero','C','+15% de probabilidad de crítico']};
 const CD={G:['🗡️','Golpe'],A:['✨','Arte'],Q:['💨','Ágil']};
 const SKN=['#f1c9a5','#e0a878','#b9774a','#7a4a2a'],HR=['#2a1a10','#8a5a1a','#d9b44a','#c0392b','#e8e8e8','#2b4a7a'],AR=['#8b1e1e','#2b4a7a','#3f6b2f','#6b4a8a','#555555','#d4a017'];
@@ -228,7 +300,7 @@ function hero(){return '<img src="'+sprite('d',0,false).toDataURL()+'" style="wi
 // Combate por turnos estilo FATE (varios enemigos, cartas, cadenas, Gran Técnica, Sellos)
 const log=m=>$('log').textContent=m;
 const MONS={slime:['Slime',60,.8],bat:['Murciélago',45,1.1],skel:['Esqueleto',80,.9],gob:['Goblin',70,1.1],boss:['Ogro',200,1.2],wolf:['Lobo',75,1.15],dragon:['Dragón',260,1.3]};
-const types=['G','A','Q'],npg={G:7,A:12,Q:9},base={G:()=>6+stat('fue')*2.4,A:()=>4+stat('man')*1.8,Q:()=>4+stat('agi')*1.6};
+const types=['G','A','Q'],npg={G:9,A:9,Q:9},base={G:()=>6+stat('fue')*2.4,A:()=>(G.cls==='hechicero'?6+stat('man')*2.4:4+stat('man')*1.8),Q:()=>(G.cls==='arquero'?6+stat('agi')*2.4:4+stat('agi')*1.6)};
 let RUN=null;
 const alive=()=>B.en.filter(e=>e.hp>0);
 const deal=()=>{B.hand=Array.from({length:5},()=>types[Math.random()*3|0]);B.sel=[]};
@@ -239,28 +311,38 @@ function mon(g,X,Y,k){const s=k==='boss'||k==='dragon'?2:1;g.drawImage(bmc(k),Ma
 const monImg=k=>MC[k]||(MC[k]='<img src="'+bmc(k).toDataURL()+'">');
 function startBattle(ks,end){const f=RUN.floor;B={en:ks.map(k=>{const m=MONS[k],hp=Math.round(m[1]*(1+f*.3));return{k,n:m[0],hp,mhp:hp,a:(5+f*2.2)*m[2],lv:f+(m[1]>=200?2:0)}}),tg:0,sel:[],hand:[],over:false,lock:false,end};deal();$('bo').classList.add('on');document.body.classList.add('inb');log('¡Aparece '+B.en.map(e=>e.n).join(', ')+'!');ui()}
 function cardDmg(t,ch){let d=base[t]()*wm();if(CL[G.cls][2]===t)d*=1.15;if(ch===3)d*=1.6;else if(ch===2)d*=1.25;
- const cr=Math.random()<.05+stat('sue')*.02+(G.cls==='lancero'?.15:0);if(cr)d*=2;return [Math.round(d*(.9+Math.random()*.2)),cr]}
+ const cr=Math.random()<.05+stat('sue')*.02+(G.cls==='lancero'?.15:0);if(cr)d*=2;return [Math.round(d),cr]}
 function tgt(){let e=B.en[B.tg];if(!e||e.hp<=0){e=alive()[0];B.tg=B.en.indexOf(e)}return e}
-function atk(){if(!B||B.over||B.lock||B.sel.length<3)return;const ts=B.sel.map(i=>B.hand[i]),same=ts.every(t=>t===ts[0]),mix=new Set(ts).size===3,ch=same?3:mix?2:0;let tot=0,tx=[];
- ts.forEach(t=>{const[d,c]=cardDmg(t,ch);tot+=d;RUN.np=Math.min(100,RUN.np+npg[t]*(1+stat('enc')*.05)*(mix?1.2:1));tx.push(d+(c?'💥':''))});
- hit([tgt()],tot,tx.join(' + ')+(same?' ¡Cadena!':mix?' ¡Combo!':''))}
-function np(){if(!B||B.over||B.lock||RUN.np<100)return;RUN.np=0;hit(alive(),npDmg(),'✨ ¡Gran Técnica a todos!')}
+function atk(){if(!B||B.over||B.lock||B.sel.length<3)return;const ts=B.sel.map(i=>B.hand[i]),same=ts.every(t=>t===ts[0]),mix=new Set(ts).size===3,ch=same?3:mix?2:0;let tot=0,tx=[],nc=0,ex=0,rs=[];
+ ts.forEach(t=>{const[d,c]=cardDmg(t,ch);tot+=d;if(c){nc++;ex+=Math.round(d/2)}RUN.np=Math.min(100,RUN.np+npg[t]*(1+stat('enc')*.05)*(mix?1.2:1));tx.push(d+(c?'💥':''));rs.push([t,d,c])});
+ B.lc=[nc,ex];B.res={s:B.sel.slice(),r:rs,tot,ch};hit([tgt()],tot,tx.join(' + ')+(same?' ¡Cadena!':mix?' ¡Combo!':''))}
+function np(){if(!B||B.over||B.lock||RUN.np<100)return;RUN.np=0;B.res={np:1,tot:npDmg()};hit(alive(),npDmg(),'✨ ¡Gran Técnica a todos!')}
 function seal(){if(!B||B.over||B.lock||RUN.seal<1)return;RUN.seal--;RUN.hp=Math.min(mx(),RUN.hp+mx()*.35);RUN.np=Math.min(100,RUN.np+50);log('🔱 ¡Sello de Mando! Recuperas vida y energía');ui()}
-function hit(es,d,m){es.forEach(e=>{e.hp=Math.max(0,e.hp-d)});log(m+' = '+d);B.last=d;B.sel=[];
- if(!alive().length){B.over=true;RUN.kills+=B.en.length;const dn=B.en.map(e=>qk(e.k)).includes(true);const gp=B.en.reduce((a,e)=>a+Math.round(e.mhp/6),0);G.gold=(G.gold|0)+gp;sv();RUN.hp=Math.min(mx(),RUN.hp+mx()*.15);log('¡Victoria! +'+gp+' 🪙 y recuperas un poco de vida.'+(dn?' 📜 ¡Misión completada!':''))}else B.lock=true;
- ui();es.forEach(e=>fx($('e'+B.en.indexOf(e)),d));if(B.lock)setTimeout(enemyTurn,650)}
+function hit(es,d,m){es.forEach(e=>{e.hp=Math.max(0,e.hp-d)});log(m+' = '+d);B.last=d;B.lastc=B.lc||[0,0];B.lc=null;B.sel=[];
+ if(!alive().length){B.over=true;RUN.kills+=B.en.length;const dn=B.en.map(e=>qk(e.k,RUN.floor)).includes(true);const gp=B.en.reduce((a,e)=>a+Math.round(e.mhp/6),0);const bs=B.en.filter(e=>e.k==='boss'||e.k==='dragon').length,bg=bs*(20+RUN.floor*10),sg=bs&&RUN.seal<5;G.gold=(G.gold|0)+gp+bg;if(sg)RUN.seal++;sv();RUN.hp=Math.min(mx(),RUN.hp+mx()*.15);log('¡Victoria! +'+gp+' 🪙 y recuperas un poco de vida.'+(bs?' 👑 Jefe: +'+bg+' 🪙'+(sg?' y +1 🔱':''):'')+(dn?' 📜 ¡Misión completada!':''))}else B.lock=true;
+ ui();es.forEach(e=>fx($('e'+B.en.indexOf(e)),d));if(B.lock)setTimeout(enemyTurn,950)}
 function enemyTurn(){const out=[];let tot=0;alive().forEach(e=>{if(Math.random()<Math.min(.4,stat('agi')*.015))out.push('esquivas a '+e.n);else{const d=Math.max(1,Math.round(e.a*(.8+Math.random()*.4)-stat('res')*.6));RUN.hp=Math.max(0,RUN.hp-d);tot+=d;out.push(e.n+' -'+d)}});
  log('Turno enemigo: '+out.join(' · '));B.lock=false;fx($('fp'),tot?'-'+tot:'Miss');
  if(RUN.hp<=0){B.over=true;log('Derrota… caes en la mazmorra.');return ui()}deal();ui()}
 function fx(el,d){if(!el)return;el.classList.remove('hit');void el.offsetWidth;el.classList.add('hit');const s=document.createElement('div');s.className='fl';s.textContent=d;s.style.left=(el.offsetLeft+el.offsetWidth/2-12)+'px';$('ar').appendChild(s);setTimeout(()=>s.remove(),1000)}
 function sel(i){const k=B.sel.indexOf(i);if(k>=0)B.sel.splice(k,1);else if(B.sel.length<3)B.sel.push(i);ui()}
+const cardSrc=t=>cardArt(t).match(/src="([^"]+)"/)[1];
+function npUI(){const b=$('npb'),p=Math.min(100,Math.floor(RUN.np));b.innerHTML='<span class="npf" style="width:'+p+'%"></span><span class="npl">✨ Gran Técnica<small>'+p+'% · ≈'+npDmg()+' a todos</small></span>';b.classList.toggle('rdy',RUN.np>=100)}
+function sumUI(){const cc=Math.round((.05+stat('sue')*.02+(G.cls==='lancero'?.15:0))*100),dg=Math.round(Math.min(.4,stat('agi')*.015)*100),el=$('sum'),wl=G.wl|0;
+ $('tb').innerHTML=Object.entries(ST).map(([k,v])=>'<span>'+v[0]+'<b>'+stat(k)+'</b></span>').join('')+'<span>🗡️<b>+'+wl*8+'%</b></span><span>💥<b>'+cc+'%</b></span><span>💨<b>'+dg+'%</b></span>';
+ const ts=B.sel.map(i=>B.hand[i]),cm=ts.length===3?(ts.every(t=>t===ts[0])?1.6:new Set(ts).size===3?1.25:1):1,val=t=>Math.round(base[t]()*wm()*(CL[G.cls][2]===t?1.15:1)*cm);
+ if(ts.length)el.innerHTML='<span class="sl">Σ Daño</span> '+ts.map(t=>CD[t][0]+val(t)).join(' + ')+(cm>1?' <b class="cm">×'+cm+'</b>':'')+' = <b class="tt">'+ts.reduce((a,t)=>a+val(t),0)+'</b><small>💥 '+cc+'% de crítico por carta</small>';
+ else if(B.res){const r=B.res;el.innerHTML=r.np?'✨ Gran Técnica: <b class="tt">'+r.tot+'</b> a todos':'<span class="sl">Último golpe</span> '+r.r.map(x=>CD[x[0]][0]+x[1]+(x[2]?'💥':'')).join(' + ')+' = <b class="tt">'+r.tot+'</b><small>'+(r.r.some(x=>x[2])?'💥 crítico ×2 en '+r.r.filter(x=>x[2]).length+' carta(s)':'sin crítico')+'</small>'}
+ else el.innerHTML='<small>Elige 3 cartas para ver la suma de daño</small>'}
 function ui(){if(!B||!RUN)return;
- $('ens').innerHTML=B.en.map((e,i)=>'<div class="en'+(i===B.tg&&e.hp>0?' t':'')+'" id="e'+i+'" data-e="'+i+'"'+(e.hp>0?'':' style="opacity:.2"')+'><div class="bar hp"><i style="width:'+e.hp/e.mhp*100+'%"></i></div>'+monImg(e.k)+'<small class="hn">❤ '+e.hp+'/'+e.mhp+'</small><small>'+e.n+' · Nv.'+e.lv+'</small></div>').join('');
+ $('ens').innerHTML=B.en.map((e,i)=>'<div class="en'+(i===B.tg&&e.hp>0?' t':'')+'" id="e'+i+'" data-e="'+i+'"'+(e.hp>0?'':' style="opacity:.2"')+'><div class="bar hp"><i style="width:'+e.hp/e.mhp*100+'%"></i></div><small class="hn">❤ '+e.hp+'/'+e.mhp+'</small>'+monImg(e.k)+'<small>'+e.n+' · Nv.'+e.lv+'</small></div>').join('');
  $('ps').innerHTML=hero();$('pname').textContent=G.name+' · '+cn(G.cls)+' · Nv. '+plv();
  $('ph').style.width=RUN.hp/mx()*100+'%';$('phn').textContent='❤ '+Math.ceil(RUN.hp)+'/'+mx();$('pn').style.width=RUN.np+'%';
- $('hand').innerHTML=B.hand.map((t,i)=>{const n=B.sel.indexOf(i);return '<div class="cd '+t+(n>=0?' s':'')+'" data-i="'+i+'"><b>'+CD[t][0]+'</b>'+CD[t][1]+(n>=0?'<span class="n">'+(n+1)+'</span>':'')+(PC?'<span class="k">'+(i+1)+'</span>':'')+'</div>'}).join('');
+ const ts0=B.sel.map(i=>B.hand[i]),cm0=ts0.length===3?(ts0.every(t=>t===ts0[0])?1.6:new Set(ts0).size===3?1.25:1):1;
+ $('hand').innerHTML=B.hand.map((t,i)=>{const n=B.sel.indexOf(i),cl=CL[G.cls][2]===t,rr=B.res&&B.lock&&B.res.s?B.res.s.indexOf(i):-1,r=rr>=0?B.res.r[rr]:null,v=Math.round(base[t]()*wm()*(cl?1.15:1)*(n>=0?cm0:1));
+  return '<div class="cd '+t+(n>=0?' s':'')+(cl?' c':'')+(r&&r[2]?' cr':'')+'" data-i="'+i+'"><img class="ca" src="'+cardSrc(t)+'"><span class="ct">'+CD[t][1]+'</span><span class="cv">'+v+(n>=0&&cm0>1?'<small> ×'+cm0+'</small>':'')+'</span>'+(n>=0?'<span class="n">'+(n+1)+'</span>':'')+(PC?'<span class="k">'+(i+1)+'</span>':'')+(r?'<div class="rs">'+(r[2]?'<small>💥 CRÍTICO ×2</small>':'')+'<b>'+r[1]+'</b></div>':'')+'</div>'}).join('');
  const off=B.over||B.lock;$('go').disabled=off||B.sel.length<3;$('npb').disabled=off||RUN.np<100;$('seal').disabled=off||!RUN.seal;$('sl').textContent=RUN.seal;
- $('start').style.display=B.over?'block':'none';$('start').textContent=alive().length?'🏘️ Volver a la aldea':'➡️ Continuar';side()}
+ $('start').style.display=B.over?'block':'none';$('start').textContent=alive().length?'🏘️ Volver a la aldea':'➡️ Continuar';npUI();sumUI();side()}
 $('hand').onclick=e=>{const c=e.target.closest('.cd');if(c&&B&&!B.over&&!B.lock)sel(+c.dataset.i)};
 $('ens').onclick=e=>{const c=e.target.closest('.en');if(c&&B&&!B.over){B.tg=+c.dataset.e;ui()}};
 $('go').onclick=atk;$('npb').onclick=np;$('seal').onclick=seal;
@@ -273,23 +355,41 @@ function bkey(k,e){if(!B)return;const n=+k;
 
 // Misiones, estadísticas de combate y vista previa de daño
 const npDmg=()=>Math.round((30+stat('man')*5+stat('fue')*3)*(1+stat('enc')*.04)*wm());
-const QD={slime:[8,40,50,'Común'],bat:[8,40,50,'Común'],skel:[12,30,40,'Poco común'],gob:[12,30,40,'Poco común'],wolf:[18,20,30,'Raro'],boss:[150,2,4,'Jefe'],dragon:[300,1,2,'Jefe']},SK={G:'fue',A:'man',Q:'agi'};
-const qRw=q=>Math.round(q.n*QD[q.k][0]),QMS=5*36e5;
-function qNew(){const p=['slime','bat','skel','gob','wolf'].sort(()=>Math.random()-.5).slice(0,3);p.push(Math.random()<.7?'boss':'dragon');
- G.q={t:Date.now(),l:p.map(k=>({k,n:QD[k][1]+rnd(QD[k][2]-QD[k][1]+1),p:0,c:0}))};sv()}
-const qChk=()=>{if(!G.q||!G.q.l||Date.now()-G.q.t>=QMS)qNew()};
-function qk(k){qChk();let d=false;G.q.l.forEach(q=>{if(q.k===k&&q.p<q.n){q.p++;if(q.p>=q.n)d=true}});sv();return d}
+const QD={slime:[.75,40,50,'Común'],bat:[.75,40,50,'Común'],skel:[1,30,40,'Poco común'],gob:[1,30,40,'Poco común'],wolf:[1.4,20,30,'Raro'],boss:[7,2,3,'Jefe'],dragon:[7,1,2,'Jefe']},SK={G:'fue',A:'man',Q:'agi'},STR={'Común':'★','Poco común':'★★','Raro':'★★★','Jefe':'★★★★'};
+const qRw=q=>q.r,QMS=5*36e5;
+function qBoss(L){const b=L[3],top=Math.max(...L.slice(0,3).map(q=>q.r));b.r=Math.max(Math.round(b.n*MONS[b.k][1]/6*(1+b.f*.3)*QD[b.k][0]),Math.round(top*1.3))}
+function qNew(){const bs=Math.max(2,(G.best|0)+1),ks=['slime','bat','skel','gob','wolf'].sort(()=>Math.random()-.5).slice(0,3).map(k=>[k,1]);
+ const dr=(G.best|0)>=4&&Math.random()<.3,bf=(dr?[6,12,18]:[3,9,15]).filter(x=>x<=Math.max(dr?6:3,bs));ks.push([dr?'dragon':'boss',bf[rnd(bf.length)]]);
+ G.q={v:4,t:Date.now(),l:ks.map(([k,f])=>{const d=QD[k],n=d[1]+rnd(d[2]-d[1]+1);return{k,f,n,p:0,c:0,r:Math.round(n*MONS[k][1]/6*(1+f*.3)*d[0])}})};qBoss(G.q.l);sv()}
+const qChk=()=>{if(!G.q||!G.q.v||G.q.v<3||!G.q.l||Date.now()-G.q.t>=QMS)qNew();else if(G.q.v===3){qBoss(G.q.l);G.q.v=4;sv()}};
+function qk(k,f){qChk();let d=false;G.q.l.forEach(q=>{if(q.k===k&&f>=q.f&&q.p<q.n){q.p++;if(q.p>=q.n)d=true}});sv();return d}
 function qClaim(i){qChk();const q=G.q.l[i];if(!q||q.c||q.p<q.n)return;q.c=1;G.gold=(G.gold|0)+qRw(q);sv();renderQ();renderG()}
 function renderQ(){qChk();const r=Math.max(0,G.q.t+QMS-Date.now());$('gold2').textContent=G.gold|0;
- $('ql').innerHTML=G.q.l.map((q,i)=>{const d=QD[q.k],p=Math.min(q.p,q.n);return '<div class="st"><span class="mi">'+monImg(q.k)+'</span><div class="l"><b>Elimina '+q.n+' × '+MONS[q.k][0]+'</b><small>'+d[3]+' · Recompensa 🪙 '+qRw(q)+'</small><div class="bar np"><i style="width:'+p/q.n*100+'%"></i></div><small>'+p+' / '+q.n+'</small></div><button class="btn g" data-q="'+i+'" '+(q.c||p<q.n?'disabled':'')+'>'+(q.c?'✔ Reclamada':p<q.n?'En curso':'Reclamar')+'</button></div>'}).join('');
- $('qt').textContent='Las misiones se renuevan en '+(r/36e5|0)+' h '+Math.floor(r%36e5/6e4)+' min. Las que no reclames se pierden al renovarse. Los monstruos raros y los jefes piden menos bajas.'}
+ $('ql').innerHTML=G.q.l.map((q,i)=>{const d=QD[q.k],p=Math.min(q.p,q.n);return '<div class="st"><span class="mi">'+monImg(q.k)+'</span><div class="l"><b>Elimina '+q.n+' × '+MONS[q.k][0]+'</b><small>'+(d[3]==='Jefe'?'🏰 Piso '+q.f+'+ · ':'')+STR[d[3]]+' '+d[3]+' · 🪙 '+q.r+'</small><div class="bar np"><i style="width:'+p/q.n*100+'%"></i></div><small>'+p+' / '+q.n+'</small></div><button class="btn g" data-q="'+i+'" '+(q.c||p<q.n?'disabled':'')+'>'+(q.c?'✔ Reclamada':p<q.n?'En curso':'Reclamar')+'</button></div>'}).join('');
+ $('qt').textContent='Los jefes indican su piso (N+ = ese piso o más profundo). A más rareza, mayor recompensa. Se renuevan en '+(r/36e5|0)+' h '+Math.floor(r%36e5/6e4)+' min; lo no reclamado se pierde.'}
 setInterval(()=>{if($('m').classList.contains('on'))renderQ()},30000);
 function side(){if(!PC||!RUN||!B)return;
  const l=G.wl|0,cc=.05+stat('sue')*.02+(G.cls==='lancero'?.15:0),dg=Math.min(.4,stat('agi')*.015),row=(a,b)=>'<div class="sr"><span>'+a+'</span><b>'+b+'</b></div>';
  $('s1').innerHTML='<h2>📜 '+G.name+'</h2><div class="sm">'+cn(G.cls)+' · Nv. '+plv()+'</div>'+row('❤ Vida',Math.ceil(RUN.hp)+'/'+mx())+row('✨ Energía',Math.floor(RUN.np)+'%')+Object.entries(ST).map(([k,v])=>row(v[0]+' '+v[1],stat(k))).join('')+row('🗡️ '+WN[G.cls]+' +'+l,'+'+l*8+'%')+row('💥 Crítico',Math.round(cc*100)+'%')+row('💨 Esquiva',Math.round(dg*100)+'%');
  const ts=B.sel.map(i=>B.hand[i]),f3=ts.length===3,same=f3&&ts.every(t=>t===ts[0]),mix=f3&&new Set(ts).size===3,cm=same?1.6:mix?1.25:1,CK={G:'#b03a2e',A:'#2b5fa8',Q:'#2e8b57'},w=wm(),nm=(v,t)=>'<b style="color:'+CK[t]+'">'+v+'</b>';let tot=0,parts=[];
- ts.forEach(t=>{const b=base[t](),k=w*(CL[G.cls][2]===t?1.15:1);tot+=b*k*cm;parts.push('('+nm(b.toFixed(1),t)+'×'+nm(k.toFixed(2),t)+')')});
- $('s2').innerHTML='<div style="font-size:15px;line-height:1.6">'+(ts.length?parts.join(' + ')+(cm>1?' × <b>'+cm+'</b>':'')+' = <b style="font-size:20px">'+Math.round(tot)+'</b> <span style="font-size:13px">('+Math.round(tot*.9)+'–'+Math.round(tot*1.1)+')</span>':'<small>Elige cartas</small>')+(B.last!=null?'<small style="display:block;color:#6b4a2a;font-size:11px">Último aplicado: '+B.last+'</small>':'')+'</div>'}
+ ts.forEach(t=>{const b=base[t](),k=w*(CL[G.cls][2]===t?1.15:1);tot+=Math.round(b*k*cm);parts.push('('+nm(b.toFixed(1),t)+'×'+nm(k.toFixed(2),t)+')')});
+ $('s2').innerHTML='<div style="font-size:15px;line-height:1.6">'+(ts.length?parts.join(' + ')+(cm>1?' × <b>'+cm+'</b>':'')+' = <b style="font-size:20px">'+Math.round(tot)+'</b>':'<small>Elige cartas</small>')+(B.last!=null?'<small style="display:block;color:#6b4a2a;font-size:11px">Último golpe: '+B.last+(B.lastc&&B.lastc[0]?' (💥×2 en '+B.lastc[0]+' · +'+B.lastc[1]+')':'')+'</small>':'')+'</div>'}
+
+const CA={"G":{"p":{"k":"#1b1208","b":"#f2f6fb","s":"#9db0c8","g":"#ffd54f","d":"#b8861b","h":"#7a4a22"},"r":["................",".......kk.......","......kbbk......","......kbsk......","......kbsk......","......kbsk......","......kbsk......","......kbsk......","......kbsk......","..kkkkkbskkkkk..",".kgggggggggggdk.","..kkkkkkkkkkkk..","......khhk......","......khhk......",".....kddddk.....","......kkkk......"]},"A":{"p":{"k":"#14275a","w":"#f4feff","c":"#7fd8ff"},"r":["................",".......kk.......","......kwwk......","......kwwk......",".....kcwwck.....","....kcwwwwck....",".kkkcwwwwwwckkk.","kwwwwwwwwwwwwwwk","kwwwwwwwwwwwwwwk",".kkkcwwwwwwckkk.","....kcwwwwck....",".....kcwwck.....","......kwwk......","......kwwk......",".......kk.......","................"]},"Q":{"p":{"k":"#1b1208","b":"#b5733a","s":"#7a4a22","d":"#4a2f1a","w":"#ffffff"},"r":["................",".....kkkkk......",".kk..kbbbk......","kwwk.kbssk......","kwwwkkbssk......",".kwwwkbbsk......","..kwwkbbsk......","...kkkbbskkkk...",".....kbbbbbbbkk.",".....kbbbbbbbbk.","....kbbbbbbbbbbk","....kkkkkkkkkkkk","....kddddddddddk","....kkkkkkkkkkkk","................","................"]}},CI={};
+const cardArt=t=>CI[t]||(CI[t]=(()=>{const m=CA[t],c=document.createElement('canvas');c.width=c.height=16;const x=c.getContext('2d');m.r.forEach((row,y)=>[...row].forEach((ch,i)=>{if(ch==='.')return;x.fillStyle=m.p[ch];x.fillRect(i,y,1,1)}));return '<img src="'+c.toDataURL()+'">'})());
+$('hq').onclick=()=>$('hw').classList.add('on');$('hx').onclick=()=>$('hw').classList.remove('on');
+$('hw').onclick=e=>{if(e.target===e.currentTarget)$('hw').classList.remove('on')};
+document.addEventListener('keydown',e=>{if($('hw').classList.contains('on')){if(e.key==='Escape'){$('hw').classList.remove('on');e.preventDefault()}e.stopPropagation()}},true);
+let TIPK=null;
+const STH={
+ fue:['Fuerza física: potencia tu carta 🗡️ Golpe y la Gran Técnica.',['🗡️ Golpe: +2.4 de daño base por punto','✨ Gran Técnica: +3 de daño por punto'],['caballero'],['lancero']],
+ res:['Aguante: te hace más difícil de derribar.',['❤ Vida máxima: +15 por punto','🛡️ Cada golpe enemigo baja 0.6 por punto'],[],'all'],
+ man:['Poder Mágico: potencia tu carta ✨ Arte y la Gran Técnica.',['✨ Arte: +1.8 de daño base por punto (+2.4 si eres Hechicero)','✨ Gran Técnica: +5 de daño por punto'],['hechicero'],'all'],
+ agi:['Reflejos: potencia tu carta 💨 Ágil y tu esquiva.',['💨 Ágil: +1.6 de daño base por punto (+2.4 si eres Arquero)','💨 Esquiva: +1.5% por punto (máx. 40%)'],['arquero'],'all'],
+ sue:['Suerte Crítica: más probabilidad de golpe crítico (hace el doble de daño).',['💥 Crítico: +2% por punto'],['lancero'],'all'],
+ enc:['Carga Especial: acelera tu Gran Técnica y la hace más fuerte.',['✨ Energía ganada: +5% por punto','✨ Gran Técnica: +4% de daño por punto'],[],'all']};
+const tipHtml=k=>{const [d,up,es,ok]=STH[k],cs=a=>a.map(c=>CL[c][0]+' '+cn(c)+(c===G.cls?' ✅':'')).join(', ');
+ return '<div class="tip">'+d+'<ul>'+up.map(u=>'<li>'+u+'</li>').join('')+'</ul>'+(es.length?'⭐ <b>Esencial:</b> '+cs(es)+'<br>':'')+'🤝 <b>Compatible:</b> '+(ok==='all'?'todas las clases':cs(ok))+'</div>'};
 
 // Herrería: armería
 function renderG(){const l=G.wl|0,t=Math.min(3,l/3|0);$('gold').textContent=G.gold|0;$('wimg').innerHTML=hero();
@@ -307,7 +407,7 @@ function renderP(){$('prev').innerHTML=hero();
  $('sx').innerHTML=[['m','♂ Masculino'],['f','♀ Femenino']].map(([k,n])=>'<button class="btn '+(G.sex===k?'g':'b')+'" data-sx="'+k+'">'+n+'</button>').join('');
  $('hst').innerHTML=['Corto','Largo','Puntas','Cola'].map((n,i)=>'<button class="btn '+(G.hs===i?'g':'b')+'" data-hs="'+i+'">'+n+'</button>').join('');
  $('av').textContent=avail();
- $('sts').innerHTML=Object.entries(ST).map(([k,v])=>'<div class="st"><span style="font-size:22px">'+v[0]+'</span><div class="l"><b>'+v[1]+' '+stat(k)+'</b><small>'+v[3]+' Nv.'+lvOf(v[2])+' + puntos '+(G.inv[k]|0)+' + base 1</small></div><button class="btn" data-u="'+k+'" '+(avail()?'':'disabled')+'>＋</button></div>').join('');
+ $('sts').innerHTML=Object.entries(ST).map(([k,v])=>'<div class="st"><span style="font-size:22px">'+v[0]+'</span><div class="l"><b>'+v[1]+' '+stat(k)+'</b><small>'+v[3]+' Nv.'+lvOf(v[2])+' + puntos '+(G.inv[k]|0)+' + base 1</small></div><button class="qm'+(TIPK===k?' on':'')+'" data-h="'+k+'">?</button><button class="btn" data-u="'+k+'" '+(avail()?'':'disabled')+'>＋</button></div>'+(TIPK===k?tipHtml(k):'')).join('');
  $('syn').textContent=app?'Sincronizado con tu progreso de Sui ✔ (habilidades y puntos extra).':'No encontré tu progreso. Abre este juego desde el mismo sitio que la app de misiones (misma carpeta de GitHub Pages).'}
 document.addEventListener('click',e=>{const t=e.target;
  if(t.dataset.t){if(t.dataset.t==='p')pv('a');tab(t.dataset.t)}
@@ -316,10 +416,12 @@ document.addEventListener('click',e=>{const t=e.target;
  if(t.dataset.k){G[t.dataset.k]=+t.dataset.v;sv();renderP()}
  if(t.dataset.hs!=null){G.hs=+t.dataset.hs;sv();renderP()}
  if(t.dataset.q!=null)qClaim(+t.dataset.q);
+ if(t.dataset.h){TIPK=TIPK===t.dataset.h?null:t.dataset.h;renderP()}
  if(t.dataset.u&&avail()){G.inv[t.dataset.u]=(G.inv[t.dataset.u]|0)+1;G.spent++;sv();renderP()}});
 $('nm').oninput=()=>{G.name=$('nm').value.trim()||'Héroe';sv()};
 const resync=()=>{readApp();renderP();renderG();ui()};
 addEventListener('storage',resync);document.addEventListener('visibilitychange',()=>{if(!document.hidden)resync()});
+ 
 // Aldea + mazmorra aleatoria (vista top-down)
 const T=16,rnd=n=>Math.random()*n|0;
 const tab=id=>{document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t===id));document.querySelectorAll('.sec').forEach(x=>x.classList.toggle('on',x.id===id));renderQ();readApp();renderP();renderG();ui()};
@@ -451,6 +553,7 @@ const gm=$('gm'),de=document.documentElement,fs=()=>{const bd=document.body,f=()
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.fullscreenElement)document.body.classList.remove('full')});
 $('fs').onclick=fs;
 document.addEventListener('fullscreenchange',()=>document.body.classList.toggle('full',!!document.fullscreenElement));
+ 
 // Clic / toque en el mapa: caminar hasta ahí (y entrar si es un edificio o escalera)
 cv.addEventListener('pointerdown',e=>{if(inB()||camx===null||$('st0').style.display==='grid')return;
  const r=cv.getBoundingClientRect(),wx=(Math.round(camx)+(e.clientX-r.left)/r.width*240)/T,wy=(Math.round(camy)+(e.clientY-r.top)/r.height*176)/T;
@@ -472,8 +575,7 @@ readApp();$('nm').value=G.name;renderP();renderG();renderQ();requestAnimationFra
 
 try{localStorage.removeItem('sui_spotify');localStorage.removeItem('sp_v')}catch(e){}
 
-// Sincronizar con el teléfono: el QR abre index.html?sync=CODIGO en el teléfono; la app de misiones
-// publica ahí {lv,sp,skills} (canal de ntfy.sh) y este juego lo recibe en tiempo real.
+// Sincronizar con el teléfono
 let synTok='',synES=null,synMsg='Esperando al teléfono…';
 try{synTok=localStorage.getItem('sui_tok')||''}catch(e){}
 const qrTxt=()=>{$('qrt').textContent=synMsg};
@@ -485,7 +587,7 @@ function synOn(){if(!synTok||synES||!window.EventSource)return;
   o=Object.assign(o,d,{skills:Object.assign({},o.skills,d.skills)});
   try{localStorage.setItem('cronicas',JSON.stringify(o))}catch(x){}
   synMsg='✔ Teléfono conectado · '+new Date().toLocaleTimeString().slice(0,5);qrTxt();resync()}catch(x){}}}
-// Dirección de tu app de misiones (puede estar en otro repositorio). Si está junto al juego, basta 'index.html'
+
 const APP_URL='https://zomboyhtml.github.io/Sui/index.html';
 function openQR(){
  if(!synTok){synTok=Array.from(crypto.getRandomValues(new Uint8Array(14)),b=>(b%36).toString(36)).join('');try{localStorage.setItem('sui_tok',synTok)}catch(e){}}
@@ -498,7 +600,7 @@ $('qr').onclick=e=>{if(e.target===$('qr'))$('qr').classList.remove('on')};
 addEventListener('keydown',e=>{if(e.key==='Escape'){if($('qr').classList.contains('on'))$('qr').classList.remove('on');else if(!$('v').classList.contains('on'))tab('v')}});
 if(synTok)synOn();
 
-// Joystick virtual (teléfono): traduce el desplazamiento a las mismas teclas de movimiento
+// Joystick virtual (teléfono)
 (()=>{const j=$('joy'),k=$('knob');let id=null;
 const set=(x,y)=>{keys.l=x<-.35;keys.r=x>.35;keys.u=y<-.35;keys.d=y>.35};
 const mv=e=>{const r=j.getBoundingClientRect(),R=r.width/2,L=R-6;let dx=e.clientX-r.left-R,dy=e.clientY-r.top-R;const m=Math.hypot(dx,dy);if(m>L){dx*=L/m;dy*=L/m}
