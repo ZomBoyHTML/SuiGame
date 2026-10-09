@@ -154,8 +154,8 @@ body.pc .cd:hover{transform:translateY(-4px)}body.pc .cd.s:hover{transform:trans
 #go,#seal{min-height:56px}#go{font-size:16px}
 .tb{position:absolute;top:8px;left:8px;right:50px;display:flex;gap:4px;overflow-x:auto;font-size:11px;white-space:nowrap;z-index:4}
 .tb span{background:#0002;border:1px solid #0003;border-radius:10px;padding:2px 6px}.tb b{margin-left:3px}
-#sum{background:#fff6;border:2px dashed var(--gold);border-radius:10px;padding:6px 8px;text-align:center;font-size:14px;line-height:1.35;min-height:46px}
-#sum .tt{font-size:22px;color:#7a1f1f}#sum .cm{color:#2b5fa8}#sum small{display:block;color:#6b4a2a;font-size:11px}#sum .sl{font-size:11px;color:#6b4a2a;text-transform:uppercase;letter-spacing:.5px}
+#sum{font-size:14px;line-height:1.35;color:#5a3a1a;text-align:left;min-height:0;margin:0}
+#sum .tt{font-size:inherit;color:#7a1f1f}#sum .cm{color:#2b5fa8}#sum small{display:inline;color:#6b4a2a;font-size:inherit}#sum small:not(:first-child):before{content:' \00b7 '}#sum .sl{font-size:inherit;color:#6b4a2a;font-weight:700;text-transform:none;letter-spacing:0}
 body.pc #tb,body.pc #sum{display:none}
 body.mob #hq{top:8px;right:8px;width:34px;height:34px;font-size:18px}
 @media (orientation:portrait){
@@ -166,6 +166,39 @@ body.mob .arena{flex:1;min-height:170px}
 body.mob .cd{height:clamp(112px,31vw,140px)}
 }
 @media (orientation:landscape) and (max-height:600px){body.mob .cd .cv small{display:none}body.mob #sum{font-size:12px;padding:3px 6px;min-height:0}body.mob .tb{font-size:10px}body.mob #go,body.mob #seal,body.mob #npb{min-height:40px}}
+/* Combate en teléfono horizontal: el panel mide exactamente la pantalla (sin scroll); la arena absorbe lo que sobra */
+#lr{display:contents}
+@media (orientation:landscape) and (max-height:600px){
+body.mob #bo{padding:4px max(4px,env(safe-area-inset-right)) 4px max(4px,env(safe-area-inset-left))}
+body.mob #bw{height:100%;max-width:660px;align-items:stretch}
+body.mob #bo .bc{--ch:clamp(60px,27dvh,96px);height:100%;display:grid;grid-template-columns:minmax(0,1fr) 156px;grid-template-rows:minmax(0,1fr) auto auto calc(var(--ch) + 8px);grid-template-areas:"ar bt" "lr lr" "sm sm" "hd hd";gap:3px 8px;padding:6px 10px}
+body.mob #ar{grid-area:ar;min-height:0;padding:6px 4px 4px;align-items:stretch}
+body.mob #lr{grid-area:lr;display:flex;align-items:center;gap:6px;min-width:0}
+body.mob .log{flex:1;min-width:0;min-height:0;font-size:12.5px;line-height:1.2}
+body.mob .tb{position:static;flex:none;max-width:62%;font-size:10px}
+body.mob .tb span{padding:1px 5px}
+body.mob #hq{position:static;flex:none;width:22px;height:22px;font-size:12px}
+body.mob #sum{grid-area:sm;font-size:11px;line-height:1.2;padding:0;margin:0}
+body.mob #hand{grid-area:hd;align-self:end;height:var(--ch);margin:0}
+body.mob .cd{height:100%}
+body.mob .cd .ct{display:block;font-size:9px;padding:1px 0}
+body.mob .cd .ca{padding:13px 4px 19px}
+body.mob .cd .cv{font-size:17px;line-height:1;padding:8px 0 3px}
+body.mob .cd .cv small{display:inline}
+body.mob #bo .bc>.row{grid-area:bt;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:6px}
+body.mob #bo .bc>.row .btn{flex:1;min-height:30px;padding:2px 6px;font-size:13px}
+body.mob #bo .bc>.row #npb{flex:1.4!important}
+body.mob #start{grid-area:bt;margin:0!important}
+body.mob #bo.ov .bc>.row{display:none}
+body.mob .ens{align-self:stretch}
+body.mob .en{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;align-self:stretch}
+body.mob .en .bar{align-self:stretch}
+body.mob .en img{flex:1 1 0px;min-height:0;max-height:76px;width:100%;height:0;object-fit:contain}
+body.mob #fp{width:38%;display:flex;flex-direction:column;justify-content:flex-end;align-self:stretch}
+body.mob .sp{position:relative;flex:1 1 0px;min-height:0;max-height:80px;max-width:none;aspect-ratio:auto;margin:0}
+body.mob .sp img{position:absolute;inset:0}
+body.mob.inb #v .card>.row.mob{display:none!important}
+}
 </style></head><body><div class="app">
 
 
@@ -188,9 +221,9 @@ body.mob .cd{height:clamp(112px,31vw,140px)}
 <h3 class="pc">⌨️ Teclas</h3><p class="pc">1-5 elegir cartas · Enter atacar · Q Gran Técnica · R Sello · ← → cambiar objetivo.</p>
 <h3 class="pc">📊 Panel de la derecha</h3><p class="pc">Muestra tus estadísticas y el daño previsto: cada paréntesis es una carta (base × bonus de arma y clase), luego × cadena o combo = daño total. Abajo ves tu último golpe y si hubo crítico.</p>
 <h3 class="mob">📊 Resumen de daño</h3><p class="mob">Arriba ves tus estadísticas. Cada carta muestra su daño; al elegir 3, la franja de abajo suma el daño total con la cadena o el combo. Tras atacar, cada carta usada muestra lo que pegó y 💥 si fue crítico (×2), y la franja guarda el último golpe.</p>
-<button class="btn g" id="hx" style="width:100%">Entendido</button></div></div><div id="bw"><div class="bc"><button id="hq" aria-label="Cómo jugar">?</button><div class="tb" id="tb"></div>
+<button class="btn g" id="hx" style="width:100%">Entendido</button></div></div><div id="bw"><div class="bc">
   <div class="arena" id="ar"><div class="ens" id="ens"></div><div class="fig" id="fp"><div class="bar hp"><i id="ph"></i></div><small class="hn" id="phn"></small><div class="sp" id="ps"></div><div class="bar np"><i id="pn"></i></div><small id="pname"></small></div></div>
-  <div class="log" id="log"></div>
+  <div id="lr"><div class="log" id="log"></div><div class="tb" id="tb"></div><button id="hq" aria-label="Cómo jugar">?</button></div>
   
   <div id="sum"></div>
   <div class="hand" id="hand"></div>
@@ -342,7 +375,7 @@ function ui(){if(!B||!RUN)return;
  $('hand').innerHTML=B.hand.map((t,i)=>{const n=B.sel.indexOf(i),cl=CL[G.cls][2]===t,rr=B.res&&B.lock&&B.res.s?B.res.s.indexOf(i):-1,r=rr>=0?B.res.r[rr]:null,v=Math.round(base[t]()*wm()*(cl?1.15:1)*(n>=0?cm0:1));
   return '<div class="cd '+t+(n>=0?' s':'')+(cl?' c':'')+(r&&r[2]?' cr':'')+'" data-i="'+i+'"><img class="ca" src="'+cardSrc(t)+'"><span class="ct">'+CD[t][1]+'</span><span class="cv">'+v+(n>=0&&cm0>1?'<small> ×'+cm0+'</small>':'')+'</span>'+(n>=0?'<span class="n">'+(n+1)+'</span>':'')+(PC?'<span class="k">'+(i+1)+'</span>':'')+(r?'<div class="rs">'+(r[2]?'<small>💥 CRÍTICO ×2</small>':'')+'<b>'+r[1]+'</b></div>':'')+'</div>'}).join('');
  const off=B.over||B.lock;$('go').disabled=off||B.sel.length<3;$('npb').disabled=off||RUN.np<100;$('seal').disabled=off||!RUN.seal;$('sl').textContent=RUN.seal;
- $('start').style.display=B.over?'block':'none';$('start').textContent=alive().length?'🏘️ Volver a la aldea':'➡️ Continuar';npUI();sumUI();side()}
+ $('start').style.display=B.over?'block':'none';$('bo').classList.toggle('ov',!!B.over);$('start').textContent=alive().length?'🏘️ Volver a la aldea':'➡️ Continuar';npUI();sumUI();side()}
 $('hand').onclick=e=>{const c=e.target.closest('.cd');if(c&&B&&!B.over&&!B.lock)sel(+c.dataset.i)};
 $('ens').onclick=e=>{const c=e.target.closest('.en');if(c&&B&&!B.over){B.tg=+c.dataset.e;ui()}};
 $('go').onclick=atk;$('npb').onclick=np;$('seal').onclick=seal;
